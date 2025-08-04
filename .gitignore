@@ -1,0 +1,5 @@
+/vendor/
+/storage/logs/*
+!.gitkeep
+.env
+.phpunit.result.cache
