@@ -8,14 +8,14 @@ use Simy\Core\Response;
 
 class HomeController
 {
-    public function index(ServerRequestInterface $request)
+    public function index()
     {
-        return new Response('Home Controller - Index Action');
+        return new Response('Welcome to Simy Framework');
     }
     
     public function about()
     {
-        return new Response('Home Controller - About Action');
+        return new Response('About Simy Framework');
     }
     
     public function contact()

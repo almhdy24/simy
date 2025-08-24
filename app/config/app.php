@@ -10,17 +10,11 @@ return [
     ],
     
     'providers' => [
-        \Simy\App\Providers\AppServiceProvider::class,
-        \Simy\App\Providers\ControllerServiceProvider::class,
-        \Simy\App\Providers\RoutingServiceProvider::class
+        \Simy\App\Providers\AppServiceProvider::class
     ],
     
     'middleware' => [
-        'web' => [
-            // Web middleware classes
-        ],
-        'api' => [
-            // API middleware classes
-        ]
+        'web' => [],
+        'api' => []
     ]
 ];
