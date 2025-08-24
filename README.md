@@ -1,36 +1,110 @@
-# Simy Framework
+# Simy Framework 🚀
 
-A minimal, lightweight PHP framework for building web applications and APIs.
+A minimal, dependency-free PHP framework for building web applications and APIs.
 
-## Features
+## ✨ Why Simy?
 
-- PSR-7 HTTP Message implementation
-- Dependency Injection Container
-- Flexible routing system
-- Middleware support
-- Configuration management
-- Built-in error handling
+- **Zero Dependencies** - Pure PHP, no bloat
+- **PSR-7 Ready** - Built-in HTTP message implementation  
+- **Modern PHP 8** - Leverages latest PHP features
+- **Lightning Fast** - Minimal overhead, maximum performance
+- **Easy Learning** - Simple and intuitive API
 
-## Installation
+## 🚀 Get Started in 60 Seconds
 
+### 1. Download & Install
 ```bash
 git clone https://github.com/almhdy24/simy.git
 cd simy
-composer install 
-## Quick Start
+```
 
-1. Create routes in `routes/web.php`:
+2. Create Your First Route
+
+Edit routes/web.php:
+
 ```php
 $route->get('/', function() {
-    return new Simy\Core\Response('Welcome to Simy!');
+    return 'Hello World! 🎉';
 });
 ```
 
-2. Run development server:
+3. Start Developing
+
 ```bash
 php -S localhost:8000 -t public
 ```
 
-## Documentation
+Open http://localhost:8000 and see your app running!
 
-See [DOCS.md](DOCS.md) for complete documentation.
+💡 Examples
+
+Basic Routing
+
+```php
+// Simple response
+$route->get('/hello', fn() => 'Hello Simy!');
+
+// JSON API response
+$route->get('/api/users', fn() => [
+    'users' => [
+        ['id' => 1, 'name' => 'John'],
+        ['id' => 2, 'name' => 'Jane']
+    ]
+]);
+
+// Route parameters
+$route->get('/user/{id}', fn($req) => 
+    "User ID: " . $req->getAttribute('id')
+);
+```
+
+Handle Form Data
+
+```php
+$route->post('/contact', function($request) {
+    $data = $request->getParsedBody();
+    return "Hello, " . ($data['name'] ?? 'Guest');
+});
+```
+
+🏗️ Project Structure
+
+```
+your-app/
+├── app/           # Your controllers & providers
+├── core/          # Framework core (PSR-7, Router, DI)
+├── public/        # Web server root
+├── routes/        # web.php & api.php
+└── storage/       # Logs & cache (auto-created)
+```
+
+🛠️ Development Commands
+
+```bash
+# Run tests
+composer test
+
+# Start development server  
+composer serve
+
+# Run with custom port
+php -S localhost:3000 -t public
+```
+
+📖 Learn More
+
+· Full Documentation - Detailed guides and examples
+· API Reference - Complete class reference
+· GitHub Repository - Star us! ⭐
+
+🤝 Support
+
+Found a bug? Have a question?
+Create an issue on GitHub!
+
+---
+
+Built with ❤️ by Elmahdi Abdallh
+MIT Licensed - Free for personal and commercial use
+
+

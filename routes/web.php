@@ -48,7 +48,6 @@ $route->get('/alpha/{name:[a-zA-Z]+}', fn($req) => new Response("Alpha: " . $req
 // ==================== CONTROLLERS ====================
 $route->get('/home', [\Simy\App\Controllers\HomeController::class, 'index']);
 $route->get('/user/{id}/profile', [\Simy\App\Controllers\UserController::class, 'profile']);
-$route->resource('/posts', \Simy\App\Controllers\PostController::class);
 
 // ==================== FALLBACK ====================
 $route->get('/{any}', fn($req) => new Response("Page '{$req->getAttribute('any')}' not found", 404))->name('fallback');

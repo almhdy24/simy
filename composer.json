@@ -1,12 +1,16 @@
 {
     "name": "simy/framework",
-    "description": "Simy - A minimal PHP framework",
-    "type": "library",
+    "description": "Simy - A minimal, lightweight PHP framework for building web applications and APIs",
+    "type": "project",
+    "keywords": ["framework", "php", "psr-7", "middleware", "routing", "container"],
+    "homepage": "https://github.com/almhdy24/simy",
     "license": "MIT",
     "authors": [
         {
             "name": "Elmahdi Abdallh",
-            "email": "almhdybdallh24@gmail.com"
+            "email": "almhdybdallh24@gmail.com",
+            "homepage": "https://github.com/almhdy24",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -17,9 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Simy\\Core\\": "core/Simy",
-            "Simy\\App\\": "app"
-        }
+            "Simy\\Core\\": "core/Simy/",
+            "Simy\\App\\": "app/"
+        },
+        "files": [
+            "core/bootstrap.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -27,6 +34,23 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
-    }
+        "test": "phpunit",
+        "serve": "php -S localhost:8000 -t public",
+        "post-install-cmd": [
+            "mkdir -p storage/logs",
+            "mkdir -p storage/cache",
+            "mkdir -p storage/sessions"
+        ],
+        "post-update-cmd": [
+            "mkdir -p storage/logs",
+            "mkdir -p storage/cache",
+            "mkdir -p storage/sessions"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
