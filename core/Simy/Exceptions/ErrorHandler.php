@@ -15,7 +15,7 @@ class ErrorHandler
     public function __construct(bool $debug = false,?string $logFile = null)
     {
         $this->debug = $debug;
-        $this->logFile = $logFile ?? dirname(__DIR__, 2) . '/storage/logs/error.log';
+        $this->logFile = $logFile ?? dirname(__DIR__, 3) . '/storage/logs/error.log';
     }
 
     public function handle(Throwable $e): void

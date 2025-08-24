@@ -14,7 +14,7 @@ A minimal, lightweight PHP framework for building web applications and APIs.
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/simy.git
+git clone https://github.com/almhdy24/simy.git
 cd simy
 composer install 
 ## Quick Start

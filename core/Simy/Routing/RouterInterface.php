@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Simy\Core\Routing;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Simy\Core\Psr\Http\Message\ResponseInterface;
+use Simy\Core\Psr\Http\Message\ServerRequestInterface;
 
 interface RouterInterface
 {

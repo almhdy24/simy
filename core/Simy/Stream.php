@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Simy\Core;
 
-use Psr\Http\Message\StreamInterface;
+use Simy\Core\Psr\Http\Message\StreamInterface;
 use RuntimeException;
 
 class Stream implements StreamInterface

@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Simy\Core;
 
-use Psr\Http\Message\UriInterface;
+use Simy\Core\Psr\Http\Message\UriInterface;
 
 class Uri implements UriInterface
 {

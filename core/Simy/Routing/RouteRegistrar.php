@@ -57,20 +57,24 @@ class RouteRegistrar
     }
 
     public function group(string $prefix, callable $callback, array $middleware = []): void
-    {
-        $previousPrefix = $this->currentNamePrefix;
-        $previousMiddleware = $this->currentGroupMiddleware;
+{
+    $previousNamePrefix = $this->currentNamePrefix;
+    $previousMiddleware = $this->currentGroupMiddleware;
 
-        $this->currentNamePrefix = $previousPrefix ? $previousPrefix . $prefix : $prefix;
-        $this->currentGroupMiddleware = array_merge($previousMiddleware, $middleware);
+    $this->currentNamePrefix = $previousNamePrefix ? $previousNamePrefix . $prefix : $prefix;
+    $this->currentGroupMiddleware = array_merge($previousMiddleware, $middleware);
 
-        try {
+    try {
+        // Delegate to router so path prefix is applied
+        $this->router->group($prefix, function($router) use ($callback) {
+            // Call the callback with this registrar (so we still allow name/middleware logic)
             $callback($this);
-        } finally {
-            $this->currentNamePrefix = $previousPrefix;
-            $this->currentGroupMiddleware = $previousMiddleware;
-        }
+        }, $middleware);
+    } finally {
+        $this->currentNamePrefix = $previousNamePrefix;
+        $this->currentGroupMiddleware = $previousMiddleware;
     }
+}
 
     private function addRoute(string $method, string $uri, $handler, array $middleware): self
     {

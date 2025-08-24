@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Simy\Core;
 
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Message\UriInterface;
-use Psr\Http\Message\RequestInterface;
+use Simy\Core\Psr\Http\Message\ServerRequestInterface;
+use Simy\Core\Psr\Http\Message\UriInterface;
+use Simy\Core\Psr\Http\Message\RequestInterface;
 
 class Request implements ServerRequestInterface
 {

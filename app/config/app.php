@@ -1,19 +1,26 @@
 <?php
-return [
-  'app' => [
-    'debug' => true,
-    'env' => 'development',
-    'error_log' => __DIR__ . '/../../storage/logs/error.log',
-    'providers' => [
-      App\Providers\DatabaseServiceProvider::class,
-      App\Providers\TemplateServiceProvider::class,
-      App\Providers\AppServiceProvider::class,
-    ],
-  ],
-  'http' => [
-    'default_headers' => [
-      'Content-Type' => 'text/html; charset=utf-8'
-    ]
-  ],
+declare(strict_types=1);
 
+return [
+    'app' => [
+        'name' => 'Simy Framework',
+        'env' => 'development',
+        'debug' => true,
+        'url' => 'http://localhost:8080'
+    ],
+    
+    'providers' => [
+        \Simy\App\Providers\AppServiceProvider::class,
+        \Simy\App\Providers\ControllerServiceProvider::class,
+        \Simy\App\Providers\RoutingServiceProvider::class
+    ],
+    
+    'middleware' => [
+        'web' => [
+            // Web middleware classes
+        ],
+        'api' => [
+            // API middleware classes
+        ]
+    ]
 ];

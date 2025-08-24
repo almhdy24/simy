@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Simy\Core;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\StreamInterface;
+use Simy\Core\Psr\Http\Message\ResponseInterface;
+use Simy\Core\Psr\Http\Message\StreamInterface;
 
 class Response implements ResponseInterface
 {
