@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Simy\App\Controllers;
+namespace App\Controllers;
 
 use Simy\Core\Psr\Http\Message\ServerRequestInterface;
 use Simy\Core\Response;

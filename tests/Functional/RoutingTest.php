@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Tests\Functional;
+namespace Simy\Tests\Functional;
 
 use Core\App;
 use Core\Request;

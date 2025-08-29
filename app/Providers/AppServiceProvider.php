@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Simy\App\Providers;
+namespace App\Providers;
 
 use Simy\Core\Container;
 use Simy\Core\Providers\ServiceProvider;
-use Simy\App\Controllers\HomeController;
+use App\Controllers\HomeController;
 
 class AppServiceProvider implements ServiceProvider
 {

@@ -10,7 +10,7 @@ return [
     ],
     
     'providers' => [
-        \Simy\App\Providers\AppServiceProvider::class
+        \App\Providers\AppServiceProvider::class
     ],
     
     'middleware' => [

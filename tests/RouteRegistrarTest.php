@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Simy\Tests;
 
 use Core\Container;
 use Core\Routing\RouteRegistrar;

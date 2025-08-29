@@ -1,56 +1,59 @@
 {
-    "name": "simy/framework",
-    "description": "Simy - A minimal, lightweight PHP framework for building web applications and APIs",
-    "type": "project",
-    "keywords": ["framework", "php", "psr-7", "middleware", "routing", "container"],
-    "homepage": "https://github.com/almhdy24/simy",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Elmahdi Abdallh",
-            "email": "almhdybdallh24@gmail.com",
-            "homepage": "https://github.com/almhdy24",
-            "role": "Developer"
-        }
+  "name": "simy/framework",
+  "description": "Simy - A minimal, lightweight PHP framework for building web applications and APIs",
+  "type": "project",
+  "keywords": ["framework",
+    "php",
+    "psr-7",
+    "middleware",
+    "routing",
+    "container"],
+  "homepage": "https://github.com/almhdy24/simy",
+  "license": "MIT",
+  "authors": [{
+    "name": "Elmahdi Abdallh",
+    "email": "almhdybdallh24@gmail.com",
+    "homepage": "https://github.com/almhdy24",
+    "role": "Developer"
+  }],
+  "require": {
+    "php": "^8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Simy\\Core\\": "core/Simy/",
+      "App\\": "app/"
+    },
+    "files": [
+      "core/bootstrap.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Simy\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "serve": "php -S localhost:8000 -t public",
+    "post-install-cmd": [
+      "mkdir -p storage/logs",
+      "mkdir -p storage/cache",
+      "mkdir -p storage/sessions"
     ],
-    "require": {
-        "php": "^8.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Simy\\Core\\": "core/Simy/",
-            "Simy\\App\\": "app/"
-        },
-        "files": [
-            "core/bootstrap.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Simy\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": "phpunit",
-        "serve": "php -S localhost:8000 -t public",
-        "post-install-cmd": [
-            "mkdir -p storage/logs",
-            "mkdir -p storage/cache",
-            "mkdir -p storage/sessions"
-        ],
-        "post-update-cmd": [
-            "mkdir -p storage/logs",
-            "mkdir -p storage/cache",
-            "mkdir -p storage/sessions"
-        ]
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "post-update-cmd": [
+      "mkdir -p storage/logs",
+      "mkdir -p storage/cache",
+      "mkdir -p storage/sessions"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
